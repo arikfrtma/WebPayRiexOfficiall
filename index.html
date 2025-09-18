@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIEXX MARKET</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            color: #2575fc;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        header p {
+            color: #6a11cb;
+            font-weight: 500;
+        }
+        
+        .product-category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2575fc;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-title i {
+            margin-right: 10px;
+            color: #2575fc;
+        }
+        
+        .product-list {
+            list-style: none;
+        }
+        
+        .product-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f0f5ff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s, background 0.2s;
+        }
+        
+        .product-item:hover {
+            background: #e0ebff;
+            transform: translateY(-2px);
+        }
+        
+        .benefits {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8faff;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .benefit-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .benefit-item i {
+            color: #28a745;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .payment-methods {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .payment-title {
+            font-size: 1.5rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .payment-title i {
+            margin-right: 10px;
+            color: #2575fc;
+        }
+        
+        .payment-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #f0f5ff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .information {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .information h3 {
+            font-size: 1.5rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .information h3 i {
+            margin-right: 10px;
+            color: #2575fc;
+        }
+        
+        .info-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .info-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: #f0f5ff;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.2s;
+        }
+        
+        .info-link:hover {
+            background: #e0ebff;
+        }
+        
+        .info-link i {
+            margin-right: 10px;
+            color: #2575fc;
+            font-size: 1.2rem;
+        }
+        
+        .note {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-top: 20px;
+            font-weight: 500;
+            color: #6a11cb;
+        }
+        
+        .music-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .music-player p {
+            margin-right: 15px;
+            color: #6a11cb;
+            font-weight: 500;
+        }
+        
+        .music-controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .music-controls button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .music-controls button:hover {
+            background: #6a11cb;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .qris-image {
+            width: 100%;
+            max-width: 250px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .wa-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .wa-link:hover {
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RIEXX MARKET</h1>
+            <p>Tempat Terbaik untuk Kebutuhan Digital Anda</p>
+        </header>
+        
+        <div class="product-category">
+            <h2 class="category-title"><i class="fas fa-robot"></i> SEWA BOT BY RIEX</h2>
+            <ul class="product-list">
+                <li class="product-item"><span>1 Jam</span><span>3K</span></li>
+                <li class="product-item"><span>2 Jam</span><span>4K</span></li>
+                <li class="product-item"><span>10 Jam</span><span>11K</span></li>
+                <li class="product-item"><span>1 Minggu</span><span>17K</span></li>
+                <li class="product-item"><span>1 Bulan</span><span>30K</span></li>
+            </ul>
+            <div class="benefits">
+                <h3>Benefit Sewa Bot:</h3>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Jaga Group</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Antilink</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Di jaga Groupnya Sama Bot Gw</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> DLL</div>
+            </div>
+        </div>
+        
+        <div class="product-category">
+            <h2 class="category-title"><i class="fas fa-server"></i> Panel Privat By Riexx</h2>
+            <ul class="product-list">
+                <li class="product-item"><span>1GB</span><span>2K</span></li>
+                <li class="product-item"><span>2GB</span><span>3K</span></li>
+                <li class="product-item"><span>4GB</span><span>5K</span></li>
+                <li class="product-item"><span>5GB</span><span>6K</span></li>
+                <li class="product-item"><span>6GB</span><span>7K</span></li>
+                <li class="product-item"><span>7GB</span><span>8K</span></li>
+                <li class="product-item"><span>8GB</span><span>9K</span></li>
+                <li class="product-item"><span>9GB</span><span>10K</span></li>
+                <li class="product-item"><span>10GB</span><span>11K</span></li>
+                <li class="product-item"><span>Unlimited</span><span>15K</span></li>
+            </ul>
+            <div class="benefits">
+                <h3>Benefit Panel Privat:</h3>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Panel Anti Lemot</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Anti Colong SC</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Di Urus Sama Gw sendiri</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Admin Cuma Riex</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> DLL</div>
+            </div>
+        </div>
+        
+        <div class="product-category">
+            <h2 class="category-title"><i class="fas fa-code"></i> Jasa Pembuatan Script Bug</h2>
+            <ul class="product-list">
+                <li class="product-item"><span>35K FREE FUNCTION</span></li>
+            </ul>
+            <div class="benefits">
+                <h3>Benefit Jasa Pembuatan Bug:</h3>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Bisa Punya Script Sendiri</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Bisa Di Jual Lagi</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Bisa Req Name Poto DLL</div>
+            </div>
+        </div>
+        
+        <div class="product-category">
+            <h2 class="category-title"><i class="fas fa-globe"></i> Jasa Pembuatan Website Payment</h2>
+            <ul class="product-list">
+                <li class="product-item"><span>10K/ BEBAS REQ</span></li>
+            </ul>
+            <div class="benefits">
+                <h3>Benefit Website Payment:</h3>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Bisa Request Nama/poto</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> Bisa Di Tambah Music Yang Lu Suka</div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i> DLL</div>
+            </div>
+        </div>
+        
+        <div class="product-category">
+            <h2 class="category-title"><i class="fas fa-syringe"></i> Layanan Lainnya</h2>
+            <ul class="product-list">
+                <li class="product-item"><span>Suntik AllSOSMED</span><span class="highlight">Chat Riexx</span></li>
+                <li class="product-item"><span>Suntik Saluran</span><span class="highlight">Chat Riexx</span></li>
+            </ul>
+        </div>
+        
+        <div class="payment-methods">
+            <h2 class="payment-title"><i class="fas fa-credit-card"></i> Metode Pembayaran</h2>
+            <div class="payment-item">
+                <span>DANA</span>
+                <span>083898472764</span>
+            </div>
+            <div class="payment-item">
+                <span>GOPAY</span>
+                <span>083898472764</span>
+            </div>
+            <div class="payment-item">
+                <span>OVO</span>
+                <span>083898472764</span>
+            </div>
+            <div class="payment-item">
+                <span>QRIS</span>
+                <span><a href="https://files.catbox.moe/zzipg6.jpg" target="_blank">Lihat Kode QR</a></span>
+            </div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://files.catbox.moe/zzipg6.jpg" alt="QRIS Payment" class="qris-image">
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://wa.me/6283898472764?text=Halo%20Riexx,%20saya%20sudah%20transfer%20untuk%20pembelian%20produk" class="wa-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Kirim Bukti Transfer
+                </a>
+            </div>
+        </div>
+        
+        <div class="information">
+            <h3><i class="fas fa-info-circle"></i> Information RIEXX</h3>
+            <div class="info-links">
+                <a href="https://whatsapp.com/channel/0029VbADiLW72WU58XSGVY2P" class="info-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                </a>
+                <a href="https://youtube.com/@RiexxNexus" class="info-link" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube: @RiexxNexus
+                </a>
+                <a href="https://instagram.com/@RiexxOfficial" class="info-link" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram: @RiexxOfficial
+                </a>
+            </div>
+        </div>
+        
+        <div class="note">
+            <p>Follow Agar Tidak Ketinggalan Info Menarik Lainnya</p>
+        </div>
+    </div>
+    
+    <div class="music-player">
+        <p>Now Playing: Youngkai - Blue</p>
+        <div class="music-controls">
+            <button id="playBtn"><i class="fas fa-play"></i></button>
+            <button id="pauseBtn"><i class="fas fa-pause"></i></button>
+            <button id="stopBtn"><i class="fas fa-stop"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // Simulasi music player
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        
+        playBtn.addEventListener('click', () => {
+            alert('Memutar musik: Youngkai - Blue (simulasi)');
+        });
+        
+        pauseBtn.addEventListener('click', () => {
+            alert('Jeda musik (simulasi)');
+        });
+        
+        stopBtn.addEventListener('click', () => {
+            alert('Menghentikan musik (simulasi)');
+        });
+    </script>
+</body>
+</html>
